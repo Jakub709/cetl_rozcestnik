@@ -6,6 +6,17 @@
 <meta name="robots" content="noindex, nofollow">
 <title>CETL CARGO – prezentace, videa a nový web</title>
 <meta name="description" content="Videa, prezentace ke stažení, leták A4 a koncept nového webu CETL CARGO.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="CETL CARGO">
+<meta property="og:title" content="Nová prezentace CETL CARGO">
+<meta property="og:description" content="Videa, šest variant prezentace, leták A4 a koncept nového webu.">
+<meta property="og:url" content="https://cetlcargo-rozcestnik.netlify.app/">
+<meta property="og:image" content="https://cetlcargo-rozcestnik.netlify.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Areál CETL CARGO ve Ždírci nad Doubravou s nápisem Nová prezentace CETL CARGO">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 124 83'%3E%3Crect x='28' y='0' width='83' height='19' rx='2' fill='%23368dbc'/%3E%3Crect x='0' y='32' width='83' height='19' rx='2' fill='%23162837'/%3E%3Crect x='41' y='63' width='83' height='19' rx='2' fill='%23e0dfda'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/fonts.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -59,6 +70,10 @@ img{display:block;max-width:100%}
   margin:clamp(24px,5vh,64px) 0 clamp(18px,3vh,32px)}
 h1{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(2.75rem,min(6vw,9.4vh),5.9rem);line-height:.9;letter-spacing:.004em}
 h1 span{display:block}
+.guide{display:inline-block;margin-top:14px;line-height:1.4;font-size:.9375rem;font-weight:600;color:var(--white);padding:4px 0;border-bottom:1.5px solid rgba(127,181,211,.5);transition:border-color .3s}
+.guide:hover{border-color:var(--blue-soft)}
+.guide svg{width:14px;height:14px;color:var(--blue-soft);vertical-align:-2px;margin-right:8px}
+.guide span{font-weight:400;color:rgba(255,255,255,.66)}
 .intro{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.55;color:rgba(255,255,255,.86);max-width:48ch}
 
 /* ---------- the three lanes = the three bars of the logo ---------- */
@@ -105,8 +120,9 @@ h1 span{display:block}
 .deck .ctr{position:absolute;right:6px;bottom:6px;padding:2px 7px;border-radius:3px;background:rgba(22,40,55,.86);color:var(--white);
   font-size:.75rem;font-weight:500;line-height:1.4;font-variant-numeric:tabular-nums;opacity:0;transition:opacity .25s}
 .deck.cycling .ctr{opacity:1}
-.deck-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.deck-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:10px}
 .deck-name{display:block;font-weight:600;font-size:.9375rem;line-height:1.25}
+.deck-use{display:block;font-weight:400;font-size:.875rem;line-height:1.35;color:var(--ink);margin-top:3px}
 .deck-size{display:block;font-weight:400;font-size:.875rem;color:var(--ink-2);margin-top:2px}
 .dl{flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;
   transition:background .3s var(--ease),transform .3s var(--ease)}
@@ -243,7 +259,8 @@ h1 span{display:block}
   <main>
     <section class="head" aria-labelledby="h1">
       <h1 id="h1"><span>Nová prezentace</span><span>CETL CARGO</span></h1>
-      <p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, šest variant firemní prezentace, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
+      <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, šest variant firemní prezentace, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
+      <a class="guide" href="ke-stazeni/pruvodce/CETL_CARGO_pruvodce_balickem.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-down"/></svg>Průvodce balíčkem: co je kde a&nbsp;z&nbsp;čeho vychází <span>(PDF, 1&nbsp;strana)</span></a></div>
     </section>
 
     <div class="lanes">
@@ -300,21 +317,21 @@ h1 span{display:block}
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_tmave_modra.pptx" download data-deck="tmava" data-count="10">
                 <span class="shot"><img src="assets/nahledy/tmava-01.jpg" alt="Titulní slide, tmavě modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Tmavě modrá<span class="deck-size">10&nbsp;slidů, 13,6&nbsp;MB</span></span>
+                  <span class="deck-name">Tmavě modrá<span class="deck-use">Na velké plátno nebo do zatemněné místnosti.</span><span class="deck-size">10&nbsp;slidů, 13,6&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetla.pptx" download data-deck="svetla" data-count="10">
                 <span class="shot"><img src="assets/nahledy/svetla-01.jpg" alt="Titulní slide, světlá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Světlá<span class="deck-size">10&nbsp;slidů, 12,3&nbsp;MB</span></span>
+                  <span class="deck-name">Světlá<span class="deck-use">Na schůzku u stolu, notebook nebo světlou zasedačku.</span><span class="deck-size">10&nbsp;slidů, 12,3&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetle_modra.pptx" download data-deck="modra" data-count="10">
                 <span class="shot"><img src="assets/nahledy/modra-01.jpg" alt="Titulní slide, světle modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Světle modrá<span class="deck-size">10&nbsp;slidů, 11,8&nbsp;MB</span></span>
+                  <span class="deck-name">Světle modrá<span class="deck-use">Ve firemní barvě, třeba pro nové partnery.</span><span class="deck-size">10&nbsp;slidů, 11,8&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
@@ -330,21 +347,21 @@ h1 span{display:block}
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_light_trails.pptx" download data-deck="film" data-count="11">
                 <span class="shot"><img src="assets/nahledy/film-01.jpg" alt="Titulní slide, Light Trails" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Light Trails, video na každém slidu<span class="deck-size">11&nbsp;slidů, 33,7&nbsp;MB</span></span>
+                  <span class="deck-name">Light Trails, video na každém slidu<span class="deck-use">Na obrazovku na veletrhu nebo jako úvod akce.</span><span class="deck-size">11&nbsp;slidů, 33,7&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_tmave_modra.pptx" download data-deck="cisla-tmava" data-count="8">
                 <span class="shot"><img src="assets/nahledy/cisla-tmava-01.jpg" alt="Titulní slide, v číslech tmavě modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">V číslech, tmavě modrá<span class="deck-size">8&nbsp;slidů, 12,2&nbsp;MB</span></span>
+                  <span class="deck-name">V číslech, tmavě modrá<span class="deck-use">Rychlé představení na plátně, když je málo času.</span><span class="deck-size">8&nbsp;slidů, 12,2&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
               <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_svetle_modra.pptx" download data-deck="cisla-modra" data-count="8">
                 <span class="shot"><img src="assets/nahledy/cisla-modra-01.jpg" alt="Titulní slide, v číslech světle modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">V číslech, světle modrá<span class="deck-size">8&nbsp;slidů, 10,1&nbsp;MB</span></span>
+                  <span class="deck-name">V číslech, světle modrá<span class="deck-use">Rychlé představení ve firemní barvě.</span><span class="deck-size">8&nbsp;slidů, 10,1&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
