@@ -77,7 +77,8 @@ h1 span{display:block}
 .intro{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.55;color:rgba(255,255,255,.86);max-width:48ch}
 
 /* ---------- the three lanes = the three bars of the logo ---------- */
-.lanes{display:flex;flex-direction:column;gap:var(--gap);margin-top:auto}
+.hero{display:flex;flex-direction:column}
+.lanes{display:flex;flex-direction:column;gap:var(--gap);margin-top:var(--gap)}
 .lane{position:relative;border-radius:var(--r)}
 .lane--videos{background:var(--blue);margin-left:18%;margin-right:3%}
 .lane--decks{background:var(--white);color:var(--ink);margin-right:6%}
@@ -180,6 +181,21 @@ h1 span{display:block}
   font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08)}
 .film .close:hover{background:rgba(255,255,255,.16)}
 
+@media (min-width:761px){
+  /* the first screen ends with the blue bar; everything else appears on scroll */
+  .hero{min-height:calc(100vh - clamp(16px,2.4vw,30px));min-height:calc(100svh - clamp(16px,2.4vw,30px));padding-bottom:clamp(12px,1.6vw,20px)}
+  .hero .head{margin-top:auto}
+  .hero .lane--videos{margin-top:auto}
+  .vid{max-width:max(220px,calc((92vh - 455px) * 16 / 9));max-width:max(220px,calc((92svh - 455px) * 16 / 9))}
+  .vid{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:end;gap:0 12px}
+  .vid-play{display:contents}
+  .vid .poster{grid-column:1 / -1}
+  .vid-play:focus-visible .poster{outline:2px solid var(--white);outline-offset:3px}
+  .vid-name{grid-column:1;margin-top:10px}
+  .vid-meta{grid-column:1}
+  .vid-dl{grid-column:2;grid-row:2 / span 2;align-self:end;padding:4px 0;font-size:.875rem}
+}
+
 /* ---------- smaller screens ---------- */
 @media (max-width:1180px){
   .lane--videos{margin-left:10%;margin-right:0}
@@ -249,6 +265,7 @@ h1 span{display:block}
 </div>
 
 <div class="page">
+  <div class="hero">
   <header class="top">
     <span class="brand" aria-label="CETL CARGO">
       <svg viewBox="0 0 507.36 82.34" style="--lw:#fff;--lm:#fff" aria-hidden="true"><use href="#logo"/></svg>
@@ -256,14 +273,12 @@ h1 span{display:block}
     <p class="for"><strong>Pro Martina Cerala a&nbsp;Jiřího Tlustého</strong>listopad 2026</p>
   </header>
 
-  <main>
     <section class="head" aria-labelledby="h1">
       <h1 id="h1"><span>Nová prezentace</span><span>CETL CARGO</span></h1>
       <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, šest variant firemní prezentace, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
       <a class="guide" href="ke-stazeni/pruvodce/CETL_CARGO_pruvodce_balickem.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-down"/></svg>Průvodce balíčkem: co je kde a&nbsp;z&nbsp;čeho vychází <span>(PDF, 1&nbsp;strana)</span></a></div>
     </section>
 
-    <div class="lanes">
       <!-- bar 1 (blue): videos -->
       <section class="lane lane--videos" aria-labelledby="videos-t">
         <div class="lane-inner">
@@ -299,7 +314,9 @@ h1 span{display:block}
           </div>
         </div>
       </section>
+  </div>
 
+  <main class="lanes">
       <!-- bar 2 (white): the presentations -->
       <section class="lane lane--decks" aria-labelledby="decks-t">
         <div class="lane-inner">
@@ -398,7 +415,6 @@ h1 span{display:block}
           </div>
         </section>
       </div>
-    </div>
   </main>
 
   <footer class="foot">
