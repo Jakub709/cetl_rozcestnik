@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CETL CARGO – prezentace, videa a nový web</title>
+<meta name="description" content="Videa, prezentace ke stažení, leták A4 a koncept nového webu CETL CARGO.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 124 83'%3E%3Crect x='28' y='0' width='83' height='19' rx='2' fill='%23368dbc'/%3E%3Crect x='0' y='32' width='83' height='19' rx='2' fill='%23162837'/%3E%3Crect x='41' y='63' width='83' height='19' rx='2' fill='%23e0dfda'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/fonts.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --navy:#162837;
+  --navy-deep:#0D1A25;
+  --blue:#368DBC;
+  --blue-soft:#7FB5D3;
+  --sand:#E0DFDA;
+  --white:#FFFFFF;
+  --ink:#162837;
+  --ink-2:rgba(22,40,55,.74);
+  --line:rgba(22,40,55,.14);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gut:clamp(16px,4vw,56px);
+  --gap:clamp(8px,1.1vw,14px);
+  --cond:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --sans:"Barlow",Arial,sans-serif;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--navy-deep);color:var(--white);-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:1rem;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--navy-deep)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px;border-radius:3px}
+.lane--videos :focus-visible{outline-color:var(--white)}
+.lane--decks :focus-visible,.lane--extra :focus-visible{outline-color:var(--blue)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- background: drone shot of the campus ---------- */
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--navy-deep)}
+.bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(13,26,37,.94) 0%,rgba(13,26,37,.78) 48%,rgba(13,26,37,.5) 100%),
+  linear-gradient(0deg,rgba(13,26,37,.9) 0%,rgba(13,26,37,0) 60%)}
+
+.page{position:relative;z-index:1;max-width:1400px;min-height:100vh;min-height:100svh;margin:0 auto;
+  padding:clamp(16px,2.4vw,30px) var(--gut) clamp(24px,3vw,40px);display:flex;flex-direction:column}
+
+/* ---------- header ---------- */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.brand svg{display:block;width:clamp(150px,14vw,196px);height:auto}
+.for{text-align:right;font-size:.9375rem;line-height:1.4;color:rgba(255,255,255,.72)}
+.for strong{display:block;font-weight:600;color:var(--white)}
+
+/* ---------- headline + intro ---------- */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,29rem);gap:clamp(24px,4vw,64px);align-items:end;
+  margin:clamp(24px,5vh,64px) 0 clamp(18px,3vh,32px)}
+h1{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(2.75rem,min(6vw,9.4vh),5.9rem);line-height:.9;letter-spacing:.004em}
+h1 span{display:block}
+.intro{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.55;color:rgba(255,255,255,.86);max-width:48ch}
+
+/* ---------- the three lanes = the three bars of the logo ---------- */
+.lanes{display:flex;flex-direction:column;gap:var(--gap);margin-top:auto}
+.lane{position:relative;border-radius:var(--r)}
+.lane--videos{background:var(--blue);margin-left:18%;margin-right:3%}
+.lane--decks{background:var(--white);color:var(--ink);margin-right:6%}
+.lane-row{display:grid;grid-template-columns:24% minmax(0,1fr);gap:var(--gap);align-items:end}
+.lane--extra{background:var(--sand);color:var(--ink)}
+
+.lane-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;margin-bottom:clamp(12px,1.6vw,20px)}
+.lane-head p{font-size:.9375rem}
+.lane-title{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(1.5rem,2.2vw,2.05rem);line-height:1;letter-spacing:.01em}
+.lane-inner{padding:clamp(16px,2vw,26px) clamp(16px,2.2vw,30px) clamp(18px,2.2vw,28px)}
+
+/* videos (blue) */
+.lane--videos .lane-title{color:var(--white)}
+.lane--videos .lane-head p{color:var(--navy-deep)}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.vid{display:flex;flex-direction:column;gap:10px;min-width:0}
+.vid-play{display:block;text-align:left;border-radius:4px}
+.poster{position:relative;display:block;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:var(--navy)}
+.poster img{width:100%;height:100%;object-fit:cover}
+.disc{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;background:var(--white);color:var(--navy);
+  display:grid;place-items:center;transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease)}
+.disc svg{width:15px;height:15px;margin-left:2px}
+.vid-play:hover .disc,.vid-play:focus-visible .disc{transform:scale(1.12);background:var(--navy);color:var(--white)}
+.vid-name{display:block;margin-top:10px;font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(1.2rem,1.6vw,1.45rem);line-height:1.05;color:var(--white)}
+.vid-meta{display:block;margin-top:3px;font-size:.9375rem;line-height:1.35;color:var(--navy-deep)}
+.vid-dl{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9375rem;color:var(--navy-deep);
+  padding:6px 0;border-bottom:1.5px solid rgba(13,26,37,.45);line-height:1.1;transition:border-color .3s}
+.vid-dl:hover{border-color:var(--navy-deep)}
+.vid-dl svg{width:15px;height:15px}
+
+/* presentations (white) */
+.lane--decks .lane-head p{color:var(--ink-2)}
+.group + .group{margin-top:clamp(20px,2.6vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid var(--line)}
+.group h3{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(1.15rem,1.5vw,1.375rem);line-height:1.05;letter-spacing:.01em}
+.group-text p{margin-top:6px;font-size:.9375rem;line-height:1.45;color:var(--ink-2);max-width:72ch}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,16px);margin-top:clamp(12px,1.4vw,16px)}
+.deck{display:block;border-radius:4px;min-width:0}
+.deck .shot{display:block;position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#EEF3F7;box-shadow:0 0 0 1px var(--line)}
+.deck .shot img{width:100%;height:100%;object-fit:cover}
+.deck .ctr{position:absolute;right:6px;bottom:6px;padding:2px 7px;border-radius:3px;background:rgba(22,40,55,.86);color:var(--white);
+  font-size:.75rem;font-weight:500;line-height:1.4;font-variant-numeric:tabular-nums;opacity:0;transition:opacity .25s}
+.deck.cycling .ctr{opacity:1}
+.deck-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.deck-name{display:block;font-weight:600;font-size:.9375rem;line-height:1.25}
+.deck-size{display:block;font-weight:400;font-size:.875rem;color:var(--ink-2);margin-top:2px}
+.dl{flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;
+  transition:background .3s var(--ease),transform .3s var(--ease)}
+.dl svg{width:15px;height:15px}
+.deck:hover .dl,.deck:focus-visible .dl,.pdf:hover .dl,.pdf:focus-visible .dl{background:var(--blue);transform:translateY(2px)}
+
+/* web + leaflet (sand) */
+.extra{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(14px,2vw,28px);padding:10px clamp(14px,2vw,22px) 10px 10px;align-items:center}
+.web{display:flex;align-items:center;gap:clamp(14px,1.6vw,22px);border-radius:4px;min-width:0}
+.web .thumb{position:relative;flex:none;width:clamp(120px,12vw,176px);aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:var(--navy)}
+.web .thumb img{width:100%;height:100%;object-fit:cover}
+.web-text{flex:1;min-width:0}
+.extra .meta{display:block;margin-top:5px;font-size:.9375rem;line-height:1.35;color:var(--ink-2)}
+.go{display:inline-flex;align-items:center;gap:10px;margin-top:10px;font-weight:600;font-size:.9375rem;white-space:nowrap}
+.go i{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;transition:transform .35s var(--ease)}
+.go svg{width:15px;height:15px}
+.web:hover .go i,.web:focus-visible .go i{transform:translateX(4px)}
+.letak{display:flex;align-items:center;gap:clamp(12px,1.4vw,18px);padding-left:clamp(14px,2vw,28px);border-left:1px solid rgba(22,40,55,.18);min-width:0}
+.letak-text{min-width:0}
+.pdfs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pdf{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9375rem;border-radius:999px}
+.pdf .dl{width:32px;height:32px}
+.pdf .dl svg{width:14px;height:14px}
+.pages{display:flex;gap:6px;flex:none}
+.pages img{width:clamp(46px,4vw,58px);height:auto;border-radius:2px;box-shadow:0 0 0 1px rgba(22,40,55,.2)}
+
+.foot{display:flex;justify-content:space-between;align-items:center;gap:10px 24px;flex-wrap:wrap;margin-top:clamp(28px,4vw,48px);
+  padding-top:18px;border-top:1px solid rgba(224,223,218,.16);font-size:.875rem;line-height:1.4;color:rgba(255,255,255,.66)}
+.foot strong{font-weight:600;color:var(--white)}
+.foot a{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--white);padding:6px 0;border-bottom:1.5px solid rgba(127,181,211,.5);transition:border-color .3s}
+.foot a:hover{border-color:var(--blue-soft)}
+.foot svg{width:14px;height:14px;transform:rotate(-45deg);color:var(--blue-soft)}
+.note{font-size:.875rem;line-height:1.45;color:rgba(255,255,255,.66);max-width:30ch;padding-bottom:6px}
+
+/* ---------- entrance: the bars drive in, like the logo animation ---------- */
+.js .lane{transform:translateX(-110vw)}
+.js .head,.js .top,.js .note,.js .foot{opacity:0}
+.js .lane > *{opacity:0}
+.js.ready .top,.js.ready .head{opacity:1;transition:opacity .7s var(--ease) .05s}
+.js.ready .lane{transform:none;transition:transform .9s var(--ease)}
+.js.ready .lane--videos{transition-delay:.12s}
+.js.ready .lane--decks{transition-delay:.22s}
+.js.ready .lane--extra{transition-delay:.32s}
+.js.ready .lane > *{opacity:1;transition:opacity .6s var(--ease) .75s}
+.js.ready .note,.js.ready .foot{opacity:1;transition:opacity .6s var(--ease) .9s}
+
+/* ---------- film dialog ---------- */
+.film{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--white)}
+.film::backdrop{background:rgba(13,26,37,.94)}
+.film[open]{display:grid;place-items:center}
+.film-box{display:flex;flex-direction:column;gap:12px}
+.film video{display:block;width:min(1280px,92vw,calc(80vh * 16 / 9));aspect-ratio:16/9;background:#000;border-radius:4px}
+.film-title{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:1.25rem;letter-spacing:.01em}
+.film .close{position:fixed;top:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);display:inline-flex;align-items:center;gap:10px;
+  font-weight:600;font-size:.9375rem;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08)}
+.film .close:hover{background:rgba(255,255,255,.16)}
+
+/* ---------- smaller screens ---------- */
+@media (max-width:1180px){
+  .lane--videos{margin-left:10%;margin-right:0}
+  .lane--decks{margin-right:0}
+  .lane-row{grid-template-columns:1fr}
+  .lane--extra{margin-left:14%}
+  .note{order:2;max-width:none;padding:6px 0 0}
+}
+@media (max-width:900px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .extra{grid-template-columns:1fr;gap:16px;padding:12px}
+  .letak{padding-left:0;border-left:0;padding-top:16px;border-top:1px solid rgba(22,40,55,.18)}
+}
+@media (max-width:760px){
+  .top{flex-direction:column;gap:14px}
+  .for{text-align:left}
+  .head{grid-template-columns:1fr;margin:28px 0 24px;gap:14px}
+  .vids{grid-template-columns:1fr;gap:16px}
+  .vid{display:grid;grid-template-columns:minmax(0,46%) minmax(0,1fr);column-gap:14px;align-items:start}
+  .vid-play{display:contents}
+  .vid .poster{grid-row:1 / span 2}
+  .vid-name{margin-top:2px}
+  .vid-dl{grid-column:2;justify-self:start}
+  .lane--videos{margin-left:6%}
+  .lane--extra{margin-left:8%}
+}
+@media (max-width:480px){
+  .cards{gap:10px}
+  .deck-name{font-size:.875rem}
+  .deck-size{font-size:.8125rem;white-space:nowrap}
+  .deck-foot{gap:8px}
+  .dl{width:30px;height:30px}
+  .disc{width:34px;height:34px;left:7px;bottom:7px}
+  .disc svg{width:12px;height:12px}
+  .web .thumb{width:104px}
+  .pages img{width:44px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .lane,.js .head,.js .top,.js .lane > *,.js .note,.js .foot{transform:none;opacity:1;transition:none}
+  .disc,.dl,.go i{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 507.36 82.34">
+    <path style="fill:var(--lw,#162837)" d="M170.09,21.76a1.88,1.88,0,0,1,.77.79,1.3,1.3,0,0,1-.09,1.17l-5.18,7.350a1.23,1.23,0,0,1-.72.6,1.39,1.39,0,0,1-.94-.26,11.54,11.54,0,0,0-3.310-1.75,11.78,11.78,0,0,0-3.830-.61,11.130,11.130,0,0,0-8.270,3.55,12.110,12.110,0,0,0-2.390,3.86,13,13,0,0,0-.86,4.72,12.84,12.84,0,0,0,.86,4.71,11.870,11.870,0,0,0,2.390,3.83,11.380,11.380,0,0,0,3.650,2.590,11.2,11.2,0,0,0,4.620.95,11.790,11.790,0,0,0,3.860-.63A12.170,12.170,0,0,0,164,50.87a1.37,1.37,0,0,1,.91-.28,1.28,1.28,0,0,1,.74.55l5.240,7.540a1.22,1.22,0,0,1,.09,1.130,1.940,1.940,0,0,1-.76.77,24.540,24.540,0,0,1-6.210,3,23.4,23.4,0,0,1-18.830-2.130,23.370,23.370,0,0,1-4.730-3.660,23.930,23.930,0,0,1-3.670-4.720A23.730,23.730,0,0,1,134.42,35a24,24,0,0,1,2.360-5.610,23.610,23.610,0,0,1,3.670-4.760A23.070,23.070,0,0,1,145.18,21a24.510,24.510,0,0,1,5.590-2.360A23.750,23.750,0,0,1,164,18.8,23.660,23.660,0,0,1,170.09,21.76Z"/>
+    <path style="fill:var(--lw,#162837)" d="M177.33,19.86a1.43,1.43,0,0,1,.35-1,1.25,1.25,0,0,1,1-.38h30.4a1.35,1.35,0,0,1,1,.39,1.5,1.5,0,0,1,.37,1.07v7.58a1.54,1.54,0,0,1-.37,1A1.26,1.26,0,0,1,209,29H189.18v7.6h15.33a1.65,1.65,0,0,1,1,.27,1,1,0,0,1,.38.92v6.62a1.29,1.29,0,0,1-.33.83,1.24,1.24,0,0,1-1,.4H189.18v7.84h20.6a1.23,1.23,0,0,1,1.38,1.41v7.7a.8.8,0,0,1-.25.55c-.08.57-.5.85-1.26.85h-31a1.46,1.46,0,0,1-1-.32,1.27,1.27,0,0,1-.36-1Z"/>
+    <path style="fill:var(--lw,#162837)" d="M216.21,19.79a1.27,1.27,0,0,1,.41-1,1.52,1.52,0,0,1,1-.36h33a1.55,1.55,0,0,1,1,.33,1.36,1.36,0,0,1,.49,1V27.4a1.66,1.66,0,0,1-.38,1.05,1.28,1.28,0,0,1-1.09.51H240.05V62.51a1.45,1.45,0,0,1-.4,1,1.33,1.33,0,0,1-1,.44h-9a1.47,1.47,0,0,1-1-.41,1.36,1.36,0,0,1-.46-1V29H217.65a1.46,1.46,0,0,1-1-.4,1.55,1.55,0,0,1-.41-1.16Z"/>
+    <path style="fill:var(--lw,#162837)" d="M258.44,19.76a1.39,1.39,0,0,1,.36-1,1.35,1.35,0,0,1,1-.39h9.07a1.47,1.47,0,0,1,.95.36,1.36,1.36,0,0,1,.46,1V53.1h16.85a1.38,1.38,0,0,1,1,.37,1.3,1.3,0,0,1,.4,1v8.06a1.47,1.47,0,0,1-.35,1,1.3,1.3,0,0,1-1,.46H259.79a1.19,1.19,0,0,1-1.350-1.350Z"/>
+    <path style="fill:var(--lm,#162837)" d="M82.65,48.78a1.82,1.82,0,0,1-1.82,1.82h-79A1.81,1.81,0,0,1,0,48.78V33.55a1.81,1.81,0,0,1,1.81-1.81h79a1.82,1.82,0,0,1,1.82,1.81Z"/>
+    <path style="fill:#368dbc" d="M30.21,0h79A1.81,1.81,0,0,1,111,1.81V17a1.82,1.82,0,0,1-1.82,1.82h-79A1.82,1.82,0,0,1,28.39,17V1.82A1.82,1.82,0,0,1,30.21,0Z"/>
+    <path style="fill:#e0dfda" d="M42.7,63.48h79a1.82,1.82,0,0,1,1.82,1.82V80.52a1.82,1.82,0,0,1-1.82,1.82h-79a1.81,1.81,0,0,1-1.81-1.81V65.29A1.82,1.82,0,0,1,42.7,63.48Z"/>
+    <path style="fill:var(--lw,#162837)" d="M331.35,22.8a1.18,1.18,0,0,1,.65.95,1,1,0,0,1-.25.64l-.82,1a3,3,0,0,1-.42.4.71.71,0,0,1-.44.15,2.33,2.33,0,0,1-1.23-.55,23.37,23.37,0,0,0-5.62-3A17.86,17.86,0,0,0,317,21.33a19.54,19.54,0,0,0-5.39.73,19.79,19.79,0,0,0-4.8,2.07,20.33,20.33,0,0,0-9.11,11.92,18.51,18.51,0,0,0-.71,5.09,18,18,0,0,0,.75,5.16,20.49,20.49,0,0,0,2.09,4.76A21.48,21.48,0,0,0,303,55.14a21.93,21.93,0,0,0,4,3.2,19.72,19.72,0,0,0,4.63,2.1,17.12,17.12,0,0,0,5,.75,18.23,18.23,0,0,0,3.23-.3,21.36,21.36,0,0,0,3.29-.89,22,22,0,0,0,3.18-1.43,17.75,17.75,0,0,0,2.83-1.91,1.24,1.24,0,0,1,.77-.28,1.38,1.38,0,0,1,1.13.77l.46.74a1.5,1.5,0,0,1,.21.76,1.35,1.35,0,0,1-.61,1.13,23.41,23.41,0,0,1-6.62,3.57,23.7,23.7,0,0,1-13.9.45,22.770,22.770,0,0,1-5.57-2.36,24,24,0,0,1-4.74-3.66A22.8,22.8,0,0,1,296.71,53a24.19,24.19,0,0,1-2.36-5.63,23.05,23.05,0,0,1-.84-6.25A23.12,23.12,0,0,1,296.7,29.4a23.59,23.59,0,0,1,3.66-4.72A22.83,22.83,0,0,1,305.11,21a24.55,24.55,0,0,1,5.62-2.36,23.51,23.51,0,0,1,13.91.45A22.58,22.58,0,0,1,331.35,22.8Z"/>
+    <path style="fill:var(--lw,#162837)" d="M335.22,62.85c.14-.47.29-.9.44-1.3s.3-.76.45-1.09l17.22-41.25a2.68,2.68,0,0,1,.37-.61.81.81,0,0,1,.7-.28h1.26a.86.86,0,0,1,.73.28c.14.18.28.37.4.55l18,43.33a1.22,1.22,0,0,1,.06.29,3.070,3.070,0,0,1,0,.32c0,.49-.33.78-1,.86h-1.62l-.13,0H372a1.14,1.14,0,0,1-1.1-.85l-4.29-10.42H343.4l-2.28,5.6q-1.1,2.67-2,4.88a1.12,1.12,0,0,1-1.07.76.94.94,0,0,1-.28,0h-1.62c-.66-.06-1-.33-1-.79V63A.32.32,0,0,1,335.22,62.85Zm9.77-14h20.07l-10-24.49Z"/>
+    <path style="fill:var(--lw,#162837)" d="M399.1,18.41a14.27,14.27,0,0,1,10.06,4.25,14.44,14.44,0,0,1,3,4.53,14.28,14.28,0,0,1-1.24,13.38,14.67,14.67,0,0,1-2.66,3,13.91,13.91,0,0,1-3.42,2.16l7.690,16.85a1.68,1.68,0,0,1,.15.55,1.41,1.41,0,0,1-.06.47c0,.1-.15.17-.33.22a3.42,3.42,0,0,1-.86.1h-1.66a.81.81,0,0,1-.79-.58l-7.54-16.7a10.790,10.790,0,0,1-1.24.23,12.320,12.320,0,0,1-1.43.07H383.87V62.85a1,1,0,0,1-1.11,1.1h-1.31a1,1,0,0,1-1.11-1.1V19.42a2.520,2.520,0,0,1,.4-.78.94.94,0,0,1,.71-.23Zm-1.78,25.07h.49c.8,0,1.58,0,2.36-.06a8,8,0,0,0,2.3-.46,11.42,11.42,0,0,0,2.94-1.53,10.38,10.38,0,0,0,2.31-2.32,10.74,10.74,0,0,0,1.51-3,11.06,11.06,0,0,0,.53-3.41,10.89,10.89,0,0,0-3.11-7.64,10.86,10.86,0,0,0-3.42-2.33,10.24,10.24,0,0,0-4.22-.86H383.87V43.48Z"/>
+    <path style="fill:var(--lw,#162837)" d="M440.27,21.51a19.31,19.31,0,0,0-5.35.73,21.09,21.09,0,0,0-4.76,2,19.76,19.76,0,0,0-4,3.13,19.37,19.37,0,0,0-3.06,4,20.87,20.87,0,0,0-1.94,4.7,19.53,19.53,0,0,0,0,10.4,20,20,0,0,0,2,4.72,19.64,19.64,0,0,0,3.09,4A20.24,20.24,0,0,0,435,60.34a19.08,19.08,0,0,0,5.2.7A18.58,18.58,0,0,0,446.71,60a19.61,19.61,0,0,0,5.1-2.68V45a1,1,0,0,1,1.12-1.13h1.27a1.18,1.18,0,0,1,.83.29,1.1,1.1,0,0,1,.3.84V58.59a1,1,0,0,1-.2.6,2.71,2.71,0,0,1-.57.53,28.23,28.23,0,0,1-6.64,3.49,22.16,22.16,0,0,1-7.72,1.32,22.89,22.89,0,0,1-11.75-3.17,23.67,23.67,0,0,1-4.71-3.63,22.92,22.92,0,0,1-3.62-4.7,23.74,23.74,0,0,1-2.33-5.58,23.42,23.42,0,0,1,2.34-18,23.73,23.73,0,0,1,3.63-4.72,23.47,23.47,0,0,1,4.7-3.66A23.19,23.19,0,0,1,434,18.74a22.42,22.42,0,0,1,6.2-.85,22.73,22.73,0,0,1,9,1.84c.49.23,1.07.51,1.76.86s1.33.71,2,1.1a13.15,13.15,0,0,1,1.59,1.15c.44.38.66.71.66,1a1,1,0,0,1-.25.64l-.82,1a2.53,2.53,0,0,1-.41.4.69.69,0,0,1-.44.15,2.32,2.32,0,0,1-1.21-.55,22.39,22.39,0,0,0-5.63-3A18.56,18.56,0,0,0,440.27,21.51Z"/>
+    <path style="fill:var(--lw,#162837)" d="M460.69,41.24a23.37,23.37,0,0,1,3.17-11.78,23.64,23.64,0,0,1,8.38-8.4,24.63,24.63,0,0,1,5.58-2.36,23.3,23.3,0,0,1,12.4,0,24,24,0,0,1,5.57,2.36,23.54,23.54,0,0,1,4.72,3.65,23,23,0,0,1,3.65,4.74,23.79,23.79,0,0,1,2.36,5.6,23,23,0,0,1,.84,6.22,22.74,22.74,0,0,1-.84,6.2A23.85,23.85,0,0,1,504.16,53a23.06,23.06,0,0,1-3.65,4.7,23.18,23.18,0,0,1-16.5,6.8,23.18,23.18,0,0,1-6.2-.82,23.44,23.44,0,0,1-5.58-2.35,23.14,23.14,0,0,1-4.72-3.64,23.11,23.11,0,0,1-6-10.29A23,23,0,0,1,460.69,41.24Zm3.59,0a19.25,19.25,0,0,0,1.54,7.7A19.83,19.83,0,0,0,476.33,59.4a19.85,19.85,0,0,0,12.95.84,19.76,19.76,0,0,0,8.7-5.07,19.27,19.27,0,0,0,3.1-4,19.74,19.74,0,0,0,2-4.72,19.52,19.52,0,0,0,.71-5.26,18.85,18.85,0,0,0-1.57-7.66A20,20,0,0,0,491.7,23,19,19,0,0,0,484,21.48a19.39,19.39,0,0,0-5.25.7,20.31,20.31,0,0,0-4.74,2,19.39,19.39,0,0,0-4,3.1,20.6,20.6,0,0,0-3.08,4A19.57,19.57,0,0,0,465,36,19.33,19.33,0,0,0,464.28,41.21Z"/>
+  </symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 2v10M3.5 7.5 8 12l4.5-4.5M2.5 14.5h11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z" fill="currentColor"/></symbol>
+  <symbol id="i-go" viewBox="0 0 18 18"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="bg" aria-hidden="true">
+  <video src="assets/areal.mp4" poster="assets/areal.jpg" muted loop playsinline autoplay preload="auto"></video>
+</div>
+
+<div class="page">
+  <header class="top">
+    <span class="brand" aria-label="CETL CARGO">
+      <svg viewBox="0 0 507.36 82.34" style="--lw:#fff;--lm:#fff" aria-hidden="true"><use href="#logo"/></svg>
+    </span>
+    <p class="for"><strong>Pro Martina Cerala a&nbsp;Jiřího Tlustého</strong>listopad 2026</p>
+  </header>
+
+  <main>
+    <section class="head" aria-labelledby="h1">
+      <h1 id="h1"><span>Nová prezentace</span><span>CETL CARGO</span></h1>
+      <p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, šest variant firemní prezentace, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
+    </section>
+
+    <div class="lanes">
+      <!-- bar 1 (blue): videos -->
+      <section class="lane lane--videos" aria-labelledby="videos-t">
+        <div class="lane-inner">
+          <div class="lane-head">
+            <h2 class="lane-title" id="videos-t">Videa</h2>
+            <p>Full HD se zvukem</p>
+          </div>
+          <div class="vids">
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_60s.mp4" data-title="Firemní spot, 60 s" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/spot-60s.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Firemní spot</span>
+                <span class="vid-meta">60&nbsp;sekund, anglicky, 40,5&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_spot_60s.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, firemní spot</span></a>
+            </div>
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_41s.mp4" data-title="Zkrácený spot, 41 s" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/spot-41s.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Zkrácený spot</span>
+                <span class="vid-meta">41&nbsp;sekund, anglicky, 27,7&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_spot_41s.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, zkrácený spot</span></a>
+            </div>
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_intro_14s.mp4" data-title="Intro, 14 s" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/intro-14s.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Intro</span>
+                <span class="vid-meta">14&nbsp;sekund, česky, 9,5&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_intro_14s.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, intro</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- bar 2 (white): the presentations -->
+      <section class="lane lane--decks" aria-labelledby="decks-t">
+        <div class="lane-inner">
+          <div class="lane-head">
+            <h2 class="lane-title" id="decks-t">Prezentace ke stažení</h2>
+            <p>V&nbsp;angličtině, formát 16:9, soubory PowerPoint</p>
+          </div>
+
+          <div class="group">
+            <div class="group-text">
+              <h3>Přesně podle původní prezentace</h3>
+              <p>Texty a&nbsp;pořadí slidů z&nbsp;vaší původní prezentace, doplněné jen o&nbsp;údaje, které poslal pan Tlustý (sklad, technologie, vozový park). Stejný obsah ve třech barvách.</p>
+            </div>
+            <div class="cards">
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_tmave_modra.pptx" download data-deck="tmava" data-count="10">
+                <span class="shot"><img src="assets/nahledy/tmava-01.jpg" alt="Titulní slide, tmavě modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">Tmavě modrá<span class="deck-size">10&nbsp;slidů, 13,6&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetla.pptx" download data-deck="svetla" data-count="10">
+                <span class="shot"><img src="assets/nahledy/svetla-01.jpg" alt="Titulní slide, světlá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">Světlá<span class="deck-size">10&nbsp;slidů, 12,3&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetle_modra.pptx" download data-deck="modra" data-count="10">
+                <span class="shot"><img src="assets/nahledy/modra-01.jpg" alt="Titulní slide, světle modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">Světle modrá<span class="deck-size">10&nbsp;slidů, 11,8&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="group-text">
+              <h3>Volnější zpracování</h3>
+              <p>Light Trails má texty z&nbsp;původní prezentace, na každém slidu vlastní video a&nbsp;navíc slide „200×&nbsp;kolem Země“. Verze v&nbsp;číslech jsou kratší příběh z&nbsp;týchž údajů s&nbsp;novými nadpisy, grafy a&nbsp;přepočty (kilometry kolem Země, růst obratu).</p>
+            </div>
+            <div class="cards">
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_light_trails.pptx" download data-deck="film" data-count="11">
+                <span class="shot"><img src="assets/nahledy/film-01.jpg" alt="Titulní slide, Light Trails" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">Light Trails, video na každém slidu<span class="deck-size">11&nbsp;slidů, 33,7&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_tmave_modra.pptx" download data-deck="cisla-tmava" data-count="8">
+                <span class="shot"><img src="assets/nahledy/cisla-tmava-01.jpg" alt="Titulní slide, v číslech tmavě modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">V číslech, tmavě modrá<span class="deck-size">8&nbsp;slidů, 12,2&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_svetle_modra.pptx" download data-deck="cisla-modra" data-count="8">
+                <span class="shot"><img src="assets/nahledy/cisla-modra-01.jpg" alt="Titulní slide, v číslech světle modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+                <span class="deck-foot">
+                  <span class="deck-name">V číslech, světle modrá<span class="deck-size">8&nbsp;slidů, 10,1&nbsp;MB</span></span>
+                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- bar 3 (sand): the new website + A4 leaflet -->
+      <div class="lane-row">
+        <p class="note">Animace a&nbsp;videa v&nbsp;prezentacích jsou připravené pro PowerPoint 2019 a&nbsp;Microsoft&nbsp;365.</p>
+        <section class="lane lane--extra" aria-label="Nový web a leták">
+          <div class="extra">
+            <!-- ODKAZ NA NOVÝ WEB: až poběží na Netlify, nahraďte href="web/index.html" jeho adresou (např. https://….netlify.app) -->
+            <a class="web" href="web/index.html" id="web-link">
+              <span class="thumb"><img src="assets/web-nahled.jpg" alt="" width="800" height="450"></span>
+              <span class="web-text">
+                <span class="lane-title">Nový web</span>
+                <span class="meta">Koncept nového cetlcargo.cz se stávajícími texty, videem areálu a&nbsp;novým designem.</span>
+                <span class="go">Otevřít web<i><svg aria-hidden="true"><use href="#i-go"/></svg></i></span>
+              </span>
+            </a>
+            <div class="letak">
+              <span class="pages" aria-hidden="true"><img src="assets/letak/onepager-en.jpg" alt="" width="360" height="509"><img src="assets/letak/onepager-cz.jpg" alt="" width="360" height="509"></span>
+              <div class="letak-text">
+                <h2 class="lane-title">Leták A4</h2>
+                <span class="meta">Firma na jedné straně, PDF k&nbsp;tisku</span>
+                <div class="pdfs">
+                  <a class="pdf" href="ke-stazeni/letak/CETL_CARGO_one-pager_EN.pdf" download><span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>EN<span class="sr"> leták, anglicky</span></a>
+                  <a class="pdf" href="ke-stazeni/letak/CETL_CARGO_one-pager_CZ.pdf" download><span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>CZ<span class="sr"> leták, česky</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>Vytvořil <strong>Jakub Solnička</strong>, KURZY ELANDIO s.r.o.</p>
+    <a href="https://kurzyelandio.cz" target="_blank" rel="noopener">kurzyelandio.cz<svg aria-hidden="true"><use href="#i-go"/></svg></a>
+  </footer>
+</div>
+
+<dialog class="film" id="film" aria-labelledby="film-t">
+  <div class="film-box">
+    <video preload="none" playsinline controls></video>
+    <p class="film-title" id="film-t"></p>
+  </div>
+  <button class="close" type="button" data-close>
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    Zavřít
+  </button>
+</dialog>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // entrance
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('ready')})});
+
+  // background video: still poster only when motion is reduced
+  var bgv=document.querySelector('.bg video');
+  if(bgv&&reduce){bgv.removeAttribute('autoplay');bgv.pause();}
+
+  // slide preview on hover / focus
+  document.querySelectorAll('.deck').forEach(function(card){
+    var img=card.querySelector('.shot img'), ctr=card.querySelector('.ctr');
+    var n=+card.dataset.count, id=card.dataset.deck, list=[];
+    for(var k=1;k<=n;k++){list.push('assets/nahledy/'+id+'-'+(k<10?'0':'')+k+'.jpg');}
+    var i=0,t=null,loaded=false;
+    function show(){img.src=list[i];ctr.textContent=(i+1)+' / '+n;}
+    function start(){
+      if(!loaded){list.forEach(function(s){var p=new Image();p.src=s;});loaded=true;}
+      clearInterval(t);i=0;show();card.classList.add('cycling');
+      t=setInterval(function(){i=(i+1)%n;show();},1000);
+    }
+    function stop(){clearInterval(t);t=null;i=0;img.src=list[0];card.classList.remove('cycling');}
+    card.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')start();});
+    card.addEventListener('pointerleave',stop);
+    card.addEventListener('focus',start);
+    card.addEventListener('blur',stop);
+  });
+
+  // videos in a dialog
+  var film=document.getElementById('film'), fv=film.querySelector('video'), ft=document.getElementById('film-t');
+  document.querySelectorAll('[data-film]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var poster=b.querySelector('img');
+      fv.src=b.dataset.film; fv.poster=poster?poster.getAttribute('src'):''; ft.textContent=b.dataset.title||'';
+      if(film.showModal){film.showModal();}else{film.setAttribute('open','');}
+      var p=fv.play(); if(p&&p.catch)p.catch(function(){});
+    });
+  });
+  function closeFilm(){fv.pause(); if(film.close){film.close();}else{film.removeAttribute('open');}}
+  film.querySelector('[data-close]').addEventListener('click',closeFilm);
+  film.addEventListener('click',function(e){if(e.target===film)closeFilm();});
+  film.addEventListener('close',function(){fv.pause();fv.removeAttribute('src');fv.load();});
+})();
+</script>
+</body>
+</html>

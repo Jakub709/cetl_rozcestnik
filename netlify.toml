@@ -1,0 +1,4 @@
+# Staticky web bez buildu - Netlify publikuje tuto slozku
+[build]
+  publish = "."
+  command = ""
