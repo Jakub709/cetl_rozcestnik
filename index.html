@@ -10,7 +10,7 @@
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="CETL CARGO">
 <meta property="og:title" content="Nová prezentace CETL CARGO">
-<meta property="og:description" content="Videa, šest variant prezentace, leták A4 a koncept nového webu.">
+<meta property="og:description" content="Videa, prezentace v angličtině i češtině, leták A4 a koncept nového webu.">
 <meta property="og:url" content="https://cetlcargo-rozcestnik.netlify.app/">
 <meta property="og:image" content="https://cetlcargo-rozcestnik.netlify.app/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -114,7 +114,11 @@ h1 span{display:block}
 .group + .group{margin-top:clamp(20px,2.6vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid var(--line)}
 .group h3{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(1.15rem,1.5vw,1.375rem);line-height:1.05;letter-spacing:.01em}
 .group-text p{margin-top:6px;font-size:.9375rem;line-height:1.45;color:var(--ink-2);max-width:72ch}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,16px);margin-top:clamp(12px,1.4vw,16px)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.2vw,16px);margin-top:clamp(12px,1.4vw,16px)}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,2.6vw,36px)}
+.groups .group{display:flex;flex-direction:column}
+.groups .group .cards{margin-top:auto;padding-top:clamp(12px,1.4vw,16px)}
+.groups .group + .group{margin-top:0;padding-top:0;border-top:0;padding-left:clamp(20px,2.6vw,36px);border-left:1px solid var(--line)}
 .deck{display:block;border-radius:4px;min-width:0}
 .deck .shot{display:block;position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#EEF3F7;box-shadow:0 0 0 1px var(--line)}
 .deck .shot img{width:100%;height:100%;object-fit:cover}
@@ -205,7 +209,8 @@ h1 span{display:block}
   .note{order:2;max-width:none;padding:6px 0 0}
 }
 @media (max-width:900px){
-  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .groups{grid-template-columns:1fr}
+  .groups .group + .group{margin-top:clamp(20px,2.6vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid var(--line);padding-left:0;border-left:0}
   .extra{grid-template-columns:1fr;gap:16px;padding:12px}
   .letak{padding-left:0;border-left:0;padding-top:16px;border-top:1px solid rgba(22,40,55,.18)}
 }
@@ -275,7 +280,7 @@ h1 span{display:block}
 
     <section class="head" aria-labelledby="h1">
       <h1 id="h1"><span>Nová prezentace</span><span>CETL CARGO</span></h1>
-      <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, šest variant firemní prezentace, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
+      <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, firemní prezentaci ve dvou podobách v&nbsp;angličtině i&nbsp;češtině, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
       <a class="guide" href="ke-stazeni/pruvodce/CETL_CARGO_pruvodce_balickem.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-down"/></svg>Průvodce balíčkem: co je kde a&nbsp;z&nbsp;čeho vychází <span>(PDF, 1&nbsp;strana)</span></a></div>
     </section>
 
@@ -322,33 +327,27 @@ h1 span{display:block}
         <div class="lane-inner">
           <div class="lane-head">
             <h2 class="lane-title" id="decks-t">Prezentace ke stažení</h2>
-            <p>V&nbsp;angličtině, formát 16:9, soubory PowerPoint</p>
+            <p>V&nbsp;angličtině i&nbsp;v&nbsp;češtině, formát 16:9, soubory PowerPoint</p>
           </div>
 
+          <div class="groups">
           <div class="group">
             <div class="group-text">
-              <h3>Přesně podle původní prezentace</h3>
-              <p>Texty a&nbsp;pořadí slidů z&nbsp;vaší původní prezentace, doplněné jen o&nbsp;údaje, které poslal pan Tlustý (sklad, technologie, vozový park). Stejný obsah ve třech barvách.</p>
+              <h3>Tmavě modrá</h3>
+              <p>Texty a&nbsp;pořadí slidů z&nbsp;vaší původní prezentace, doplněné podle pana Tlustého o&nbsp;strategickou polohu Ždírce, fotky centrály, sklad 3&nbsp;400&nbsp;m² a&nbsp;CETL School. Na velké plátno nebo do zatemněné místnosti.</p>
             </div>
             <div class="cards">
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_tmave_modra.pptx" download data-deck="tmava" data-count="10">
-                <span class="shot"><img src="assets/nahledy/tmava-01.jpg" alt="Titulní slide, tmavě modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_tmave_modra_EN.pptx" download data-deck="tmava-en" data-count="12">
+                <span class="shot"><img src="assets/nahledy/tmava-en-01.jpg" alt="Titulní slide, tmavě modrá verze v angličtině" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Tmavě modrá<span class="deck-use">Na velké plátno nebo do zatemněné místnosti.</span><span class="deck-size">10&nbsp;slidů, 13,6&nbsp;MB</span></span>
+                  <span class="deck-name">Anglicky<span class="deck-use">Pro zahraniční partnery.</span><span class="deck-size">12&nbsp;slidů, 15,4&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetla.pptx" download data-deck="svetla" data-count="10">
-                <span class="shot"><img src="assets/nahledy/svetla-01.jpg" alt="Titulní slide, světlá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_tmave_modra_CZ.pptx" download data-deck="tmava-cz" data-count="12">
+                <span class="shot"><img src="assets/nahledy/tmava-cz-01.jpg" alt="Titulní slide, tmavě modrá verze v češtině" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Světlá<span class="deck-use">Na schůzku u stolu, notebook nebo světlou zasedačku.</span><span class="deck-size">10&nbsp;slidů, 12,3&nbsp;MB</span></span>
-                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
-                </span>
-              </a>
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_puvodni_obsah_svetle_modra.pptx" download data-deck="modra" data-count="10">
-                <span class="shot"><img src="assets/nahledy/modra-01.jpg" alt="Titulní slide, světle modrá verze" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
-                <span class="deck-foot">
-                  <span class="deck-name">Světle modrá<span class="deck-use">Ve firemní barvě, třeba pro nové partnery.</span><span class="deck-size">10&nbsp;slidů, 11,8&nbsp;MB</span></span>
+                  <span class="deck-name">Česky<span class="deck-use">Pro české zákazníky a&nbsp;akce.</span><span class="deck-size">12&nbsp;slidů, 15,4&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
@@ -357,32 +356,26 @@ h1 span{display:block}
 
           <div class="group">
             <div class="group-text">
-              <h3>Volnější zpracování</h3>
-              <p>Light Trails má texty z&nbsp;původní prezentace, na každém slidu vlastní video a&nbsp;navíc slide „200×&nbsp;kolem Země“. Verze v&nbsp;číslech jsou kratší příběh z&nbsp;týchž údajů s&nbsp;novými nadpisy, grafy a&nbsp;přepočty (kilometry kolem Země, růst obratu).</p>
+              <h3>Light Trails, video na každém slidu</h3>
+              <p>Stejný obsah, na každém slidu vlastní video a&nbsp;navíc slide „200×&nbsp;kolem Země“. Na obrazovku na veletrhu nebo jako úvod akce.</p>
             </div>
             <div class="cards">
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_light_trails.pptx" download data-deck="film" data-count="11">
-                <span class="shot"><img src="assets/nahledy/film-01.jpg" alt="Titulní slide, Light Trails" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_light_trails_EN.pptx" download data-deck="film-en" data-count="13">
+                <span class="shot"><img src="assets/nahledy/film-en-01.jpg" alt="Titulní slide, Light Trails v angličtině" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">Light Trails, video na každém slidu<span class="deck-use">Na obrazovku na veletrhu nebo jako úvod akce.</span><span class="deck-size">11&nbsp;slidů, 33,7&nbsp;MB</span></span>
+                  <span class="deck-name">Anglicky<span class="deck-use">Pro zahraniční partnery.</span><span class="deck-size">13&nbsp;slidů, 35,6&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_tmave_modra.pptx" download data-deck="cisla-tmava" data-count="8">
-                <span class="shot"><img src="assets/nahledy/cisla-tmava-01.jpg" alt="Titulní slide, v číslech tmavě modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
+              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_light_trails_CZ.pptx" download data-deck="film-cz" data-count="13">
+                <span class="shot"><img src="assets/nahledy/film-cz-01.jpg" alt="Titulní slide, Light Trails v češtině" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
                 <span class="deck-foot">
-                  <span class="deck-name">V číslech, tmavě modrá<span class="deck-use">Rychlé představení na plátně, když je málo času.</span><span class="deck-size">8&nbsp;slidů, 12,2&nbsp;MB</span></span>
-                  <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
-                </span>
-              </a>
-              <a class="deck" href="ke-stazeni/prezentace/CETL_CARGO_volne_zpracovani_v_cislech_svetle_modra.pptx" download data-deck="cisla-modra" data-count="8">
-                <span class="shot"><img src="assets/nahledy/cisla-modra-01.jpg" alt="Titulní slide, v číslech světle modrá" width="800" height="450" loading="lazy"><span class="ctr" aria-hidden="true"></span></span>
-                <span class="deck-foot">
-                  <span class="deck-name">V číslech, světle modrá<span class="deck-use">Rychlé představení ve firemní barvě.</span><span class="deck-size">8&nbsp;slidů, 10,1&nbsp;MB</span></span>
+                  <span class="deck-name">Česky<span class="deck-use">Pro české zákazníky a&nbsp;akce.</span><span class="deck-size">13&nbsp;slidů, 36,0&nbsp;MB</span></span>
                   <span class="dl"><svg aria-hidden="true"><use href="#i-down"/></svg></span>
                 </span>
               </a>
             </div>
+          </div>
           </div>
         </div>
       </section>
