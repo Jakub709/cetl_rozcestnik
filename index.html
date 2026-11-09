@@ -190,7 +190,8 @@ h1 span{display:block}
   .hero{min-height:calc(100vh - clamp(16px,2.4vw,30px));min-height:calc(100svh - clamp(16px,2.4vw,30px));padding-bottom:clamp(12px,1.6vw,20px)}
   .hero .head{margin-top:auto}
   .hero .lane--videos{margin-top:auto}
-  .vid{max-width:max(220px,calc((92vh - 455px) * 16 / 9));max-width:max(220px,calc((92svh - 455px) * 16 / 9))}
+  /* two rows of three: each poster gets half of what is left of the first screen */
+  .vid{max-width:max(190px,calc((92vh - 533px) * 8 / 9));max-width:max(190px,calc((92svh - 533px) * 8 / 9))}
   .vid{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:end;gap:0 12px}
   .vid-play{display:contents}
   .vid .poster{grid-column:1 / -1}
@@ -280,7 +281,7 @@ h1 span{display:block}
 
     <section class="head" aria-labelledby="h1">
       <h1 id="h1"><span>Nová prezentace</span><span>CETL CARGO</span></h1>
-      <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: tři videa, firemní prezentaci ve dvou podobách v&nbsp;angličtině i&nbsp;češtině, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
+      <div class="intro-wrap"><p class="intro">Vážení pánové, na jednom místě tu máte všechno, co jsem pro CETL&nbsp;CARGO připravil: šest videí, firemní prezentaci ve dvou podobách v&nbsp;angličtině i&nbsp;češtině, leták A4 a&nbsp;koncept nového webu. Videa si můžete rovnou přehrát, prezentace a&nbsp;leták stáhnout.</p>
       <a class="guide" href="ke-stazeni/pruvodce/CETL_CARGO_pruvodce_balickem.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-down"/></svg>Průvodce balíčkem: co je kde a&nbsp;z&nbsp;čeho vychází <span>(PDF, 1&nbsp;strana)</span></a></div>
     </section>
 
@@ -289,9 +290,33 @@ h1 span{display:block}
         <div class="lane-inner">
           <div class="lane-head">
             <h2 class="lane-title" id="videos-t">Videa</h2>
-            <p>Full HD, anglicky s&nbsp;mužským hlasem</p>
+            <p>Full HD, mužský hlas, firemní film česky i&nbsp;anglicky</p>
           </div>
           <div class="vids">
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_2min36_CZ.mp4" data-title="Firemní film, česky, 2:36" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/spot-2min36-cz.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Film CZ</span>
+                <span class="vid-meta">2&nbsp;min 36&nbsp;s, 73,8&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_spot_2min36_CZ.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, firemní film česky</span></a>
+            </div>
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_2min36_EN.mp4" data-title="Firemní film, anglicky, 2:36" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/spot-2min36-en.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Film EN</span>
+                <span class="vid-meta">2&nbsp;min 36&nbsp;s, 73,6&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_spot_2min36_EN.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, firemní film anglicky</span></a>
+            </div>
+            <div class="vid">
+              <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_2min15_EN.mp4" data-title="Firemní film, kratší, 2:15" aria-haspopup="dialog">
+                <span class="poster"><img src="assets/video/spot-2min15-en.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
+                <span class="vid-name">Kratší film EN</span>
+                <span class="vid-meta">2&nbsp;min 15&nbsp;s, 63,7&nbsp;MB</span>
+              </button>
+              <a class="vid-dl" href="ke-stazeni/video/CETL_CARGO_spot_2min15_EN.mp4" download><svg aria-hidden="true"><use href="#i-down"/></svg>Stáhnout MP4<span class="sr">, kratší firemní film</span></a>
+            </div>
             <div class="vid">
               <button class="vid-play" type="button" data-film="ke-stazeni/video/CETL_CARGO_spot_60s_EN.mp4" data-title="Firemní spot, 60 s" aria-haspopup="dialog">
                 <span class="poster"><img src="assets/video/spot-60s.jpg" alt="" width="960" height="540"><span class="disc"><svg aria-hidden="true"><use href="#i-play"/></svg></span></span>
